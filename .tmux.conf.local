@@ -292,4 +292,8 @@ tmux_conf_copy_to_os_clipboard=false
 # bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position top
+
+# YOU NEED TO SET the below in ~/.zshenv otherwise this will not work
+# export GPG_TTY=${TTY}
+bind C-p new-window 'pass -c sig ; tmux display "password copied"'
