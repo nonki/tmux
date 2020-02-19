@@ -297,3 +297,7 @@ set -g status-position top
 # YOU NEED TO SET the below in ~/.zshenv otherwise this will not work
 # export GPG_TTY=${TTY}
 bind C-p new-window 'pass -c sig ; tmux display "password copied"'
+
+bind-key C-w set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
+bind-key C-m set-window-option mouse\; display-message "mouse-mode is now #{?mouse,on,off}"
+
